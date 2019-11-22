@@ -14,16 +14,6 @@ var Stack = function() {
       if(key === 0){
         return;
       }
-     //   --key;
-     //   var deleted = storage[key] 
-     //   var obj = {};
-     //   for(var k in storage){
-     //    if(k !== key){
-     //    obj[k] = storage[k];
-     //   }
-     // }
-     // obj = storage;
-     // return deleted;
      key--
      var val = storage[key];
      delete storage[key];

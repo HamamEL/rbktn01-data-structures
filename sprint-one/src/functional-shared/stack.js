@@ -1,40 +1,38 @@
-var Stack = function() {
-
-  var someInstance.= {};
-   someInstance.key = 0;
-  // Use an object with numeric keys to store values
-  var storage  = {};
-  extend(someInstance,storage,stackMethods);
-  return someInstance;
-}
-  // Implement the methods below
 var extend = function(to, from) {
   for (var key in from) {
     to[key] = from[key];
   }
 };
 
+var Stack = function() {
+
+  var someInstance= {};
+   someInstance.storage  = {};
+   someInstance.key = 0;
+   extend(someInstance,stackMethods);
+
+   return someInstance;
+}
 
 
- storage.stackMethods.push = function(value){
-  storage[key++] = value;
+var stackMethods = {};
+stackMethods.push = function(value){
+  this.storage[this.key++] = value;
 };
   
-storage.stackMethods.pop = function(value){
-   if(key === 0){
+stackMethods.pop = function(value){
+   if(this.key === 0){
         return;
       }
-     key--
-     var val = storage[key];
-     delete storage[key];
+     this.key--;
+     var val = this.storage[this.key];
+     delete this.storage[this.key];
     
        console.log(val)
      return val;
 
 };
-storage.stackMethods.size = function(value){
- return  key;  
-
+stackMethods.size = function(value){
+ return  this.key;  
+ 
 };
-
-
